@@ -1,0 +1,55 @@
+:root {
+  /* Color */
+  --color-bg: #FAFBFE;
+  --color-bg-wash: #DCE7FB;
+  --color-bg-wash-2: #EAF1FE;
+  --color-text: #0A0A0A;
+  --color-text-soft: #1F2330;
+  --color-text-muted: #6B7280;
+  --color-border: #E8EAF0;
+  --color-card: #FFFFFF;
+  --color-card-soft: #F4F6FB;
+  --color-cta-bg: #0A0A0A;
+  --color-cta-bg-hover: #1F1F1F;
+  --color-cta-fg: #FFFFFF;
+  --color-accent-blue: #4F8CFA;
+
+  /* Radius */
+  --radius-pill: 999px;
+  --radius-card: 24px;
+  --radius-card-sm: 16px;
+  --radius-phone: 44px;
+
+  /* Type */
+  --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-serif-italic: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  /* Type scale */
+  --fs-hero: clamp(40px, 6vw, 68px);
+  --fs-section: clamp(32px, 4.5vw, 50px);
+  --fs-subhead: clamp(20px, 2.2vw, 26px);
+  --fs-body: 17px;
+  --fs-small: 14px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Shadow */
+  --shadow-phone:
+    0 30px 60px -20px rgba(15, 23, 42, 0.28),
+    0 14px 24px -12px rgba(15, 23, 42, 0.18);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 30px -16px rgba(15, 23, 42, 0.12);
+
+  /* Layout */
+  --max-width: 1200px;
+  --page-gutter: clamp(20px, 4vw, 40px);
+}
