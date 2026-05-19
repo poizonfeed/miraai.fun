@@ -4,7 +4,7 @@ const DEFAULT_HREF =
   import.meta.env.VITE_MIRA_CTA_URL || "https://t.me/MiraAIBot";
 
 export default function CTAButton({
-  label = "Open App",
+  label = "Open in Telegram",
   href,
   size = "md",
   showArrow = true,
