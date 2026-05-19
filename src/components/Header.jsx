@@ -1,14 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import CTAButton from "./CTAButton.jsx";
+import { useLang } from "../i18n/LangContext.jsx";
 import styles from "./Header.module.css";
 
-const NAV = [
-  { to: "/group-chats", label: "Group Chats" },
-  { to: "/blog", label: "Blog" },
-];
-
 export default function Header() {
+  const { lang, toggle, t } = useLang();
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -17,21 +15,33 @@ export default function Header() {
         </div>
 
         <nav className={styles.nav} aria-label="Primary">
-          {NAV.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) =>
-                isActive ? `${styles.link} ${styles.active}` : styles.link
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          <NavLink
+            to="/group-chats"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            {t.nav.groupChats}
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            {t.nav.blog}
+          </NavLink>
         </nav>
 
         <div className={styles.right}>
-          <CTAButton size="sm" />
+          <button
+            className={styles.langToggle}
+            onClick={toggle}
+            aria-label="Switch language"
+          >
+            {lang === "en" ? "RU" : "EN"}
+          </button>
+          <CTAButton size="sm" label={t.cta} />
         </div>
       </div>
     </header>

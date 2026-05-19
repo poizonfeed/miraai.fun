@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { useLang } from "../i18n/LangContext.jsx";
 import styles from "./Hero.module.css";
 
 const PHONES = [
@@ -8,10 +9,10 @@ const PHONES = [
 ];
 
 export default function Hero() {
+  const { t } = useLang();
   const [active, setActive] = useState(0);
   const trackRef = useRef(null);
 
-  // Scroll to center phone on mount
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -19,7 +20,6 @@ export default function Hero() {
     setActive(1);
   }, []);
 
-  // Update dot indicator on scroll
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -31,18 +31,20 @@ export default function Hero() {
     return () => track.removeEventListener("scroll", onScroll);
   }, []);
 
+  const [line1, line2] = t.hero.headline.split("\n");
+
   return (
     <section className={styles.hero}>
       <div className={styles.copy}>
         <h1 className={styles.headline}>
-          Mira – the personal AI agent
+          {line1}
           <br />
-          that acts inside your messenger
+          {line2}
         </h1>
         <p className={styles.subhead}>
-          Works inside Telegram across personal
-          <br className={styles.brOnDesktop} />
-          and group chats with zero setup
+          {t.hero.subhead.split("\n").map((line, i) => (
+            <span key={i}>{line}{i === 0 && <br className={styles.brOnDesktop} />}</span>
+          ))}
         </p>
       </div>
 
