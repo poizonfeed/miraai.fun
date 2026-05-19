@@ -11,21 +11,28 @@ export default function PhoneFrame({
   className = "",
 }) {
   const transform = `translate(${translateX}px, ${translateY}px) rotate(${tilt}deg) scale(${scale})`;
+
   return (
     <div
       className={[styles.phone, className].filter(Boolean).join(" ")}
       style={{ transform, zIndex }}
     >
-      <div className={styles.frame}>
-        <div className={styles.notch} aria-hidden="true" />
-        <div className={styles.screen}>
-          {src ? (
-            <img src={src} alt={alt} loading="lazy" />
-          ) : (
-            <div className={styles.empty} aria-hidden="true" />
-          )}
-        </div>
-      </div>
+      {/* Screenshot sits behind the transparent frame */}
+      {src && (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className={styles.screenshot}
+        />
+      )}
+      {/* Real iPhone 14 mockup — screen area is transparent so screenshot shows through */}
+      <img
+        src="/assets/phone-frame.png"
+        alt=""
+        aria-hidden="true"
+        className={styles.frame}
+      />
     </div>
   );
 }

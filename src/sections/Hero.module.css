@@ -46,57 +46,54 @@
   }
 }
 
+/* Phone composition */
 .phones {
   position: relative;
   margin-top: clamp(32px, 5vw, 64px);
-  display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
-  align-items: end;
-  justify-items: center;
-  gap: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   padding-bottom: 20px;
-  min-height: 460px;
+  min-height: 480px;
 }
 
-.phoneSlot {
-  display: flex;
-  justify-content: center;
+.phone {
+  display: block;
+  width: 260px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .left {
-  transform: translateX(40px);
+  transform: rotate(-8deg) translateY(36px) translateX(30px);
+  width: 240px;
+  z-index: 1;
+  position: relative;
+}
+
+.center {
+  width: 280px;
+  z-index: 3;
+  position: relative;
 }
 
 .right {
-  transform: translateX(-40px);
-}
-
-.center :global(.phone),
-.center > * {
-  --phone-width: 280px;
+  transform: rotate(8deg) translateY(36px) translateX(-30px);
+  width: 240px;
+  z-index: 1;
+  position: relative;
 }
 
 @media (max-width: 900px) {
-  .phones {
-    min-height: 380px;
-  }
-  .center :global(.phone),
-  .center > * {
-    --phone-width: 240px;
-  }
+  .phone { width: 220px; }
+  .center { width: 250px; }
+  .left, .right { width: 200px; }
+  .phones { min-height: 380px; }
 }
 
 @media (max-width: 640px) {
-  .phones {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .left,
-  .right {
-    display: none;
-  }
-  .center :global(.phone),
-  .center > * {
-    --phone-width: 260px;
-  }
+  .left, .right { display: none; }
+  .phones { min-height: auto; }
+  .center { width: 280px; }
 }

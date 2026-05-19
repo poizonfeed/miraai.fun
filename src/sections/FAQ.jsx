@@ -4,7 +4,7 @@ import styles from "./FAQ.module.css";
 const ITEMS = [
   {
     q: "Is Mira free?",
-    a: "Yes, Mira is free to start. Open the app inside Telegram and you can begin chatting right away — no card, no setup.",
+    a: "Yes, Mira is free to start. Open the app inside Telegram and you can begin chatting right away – no card, no setup.",
   },
   {
     q: "Do I need to install anything?",
@@ -24,7 +24,7 @@ const ITEMS = [
   },
   {
     q: "Which languages does Mira support?",
-    a: "Mira understands and replies in the major languages — including English, Russian, Spanish, German, French, Portuguese and more.",
+    a: "Mira understands and replies in the major languages – including English, Russian, Spanish, German, French, Portuguese and more.",
   },
 ];
 

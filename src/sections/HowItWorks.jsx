@@ -1,4 +1,3 @@
-import PhoneFrame from "../components/PhoneFrame.jsx";
 import styles from "./HowItWorks.module.css";
 
 const STEPS = [
@@ -15,7 +14,7 @@ const STEPS = [
   {
     n: "03",
     title: "Mira acts, you stay in flow",
-    body: "Drafts, plans, summaries, replies — Mira handles the work and hands the result back inside the chat.",
+    body: "Drafts, plans, summaries, replies – Mira handles the work and hands the result back inside the chat.",
   },
 ];
 
@@ -42,11 +41,11 @@ export default function HowItWorks() {
           </ol>
 
           <div className={styles.visual}>
-            <PhoneFrame
-              src="/assets/phone-center.svg"
+            <img
+              src="/assets/photo-center.png"
               alt="Mira responding inside a Telegram chat"
-              scale={1}
-              zIndex={1}
+              className={styles.phone}
+              loading="lazy"
             />
           </div>
         </div>

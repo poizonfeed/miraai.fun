@@ -1,4 +1,3 @@
-import PhoneFrame from "../components/PhoneFrame.jsx";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -6,7 +5,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.copy}>
         <h1 className={styles.headline}>
-          Mira — the personal AI agent
+          Mira – the personal AI agent
           <br />
           that acts inside your messenger
         </h1>
@@ -18,40 +17,24 @@ export default function Hero() {
       </div>
 
       <div className={styles.phones}>
-        <div className={`${styles.phoneSlot} ${styles.left}`}>
-          <PhoneFrame
-            src="/assets/phone-left.svg"
-            alt="Mira drawing a Studio Ghibli–style portrait inside a Telegram chat"
-            tilt={-8}
-            scale={0.92}
-            translateY={36}
-            translateX={20}
-            zIndex={1}
-          />
-        </div>
-
-        <div className={`${styles.phoneSlot} ${styles.center}`}>
-          <PhoneFrame
-            src="/assets/phone-center.svg"
-            alt="Mira chat home in Telegram with the prompt How I can help you today?"
-            tilt={0}
-            scale={1.08}
-            translateY={0}
-            zIndex={3}
-          />
-        </div>
-
-        <div className={`${styles.phoneSlot} ${styles.right}`}>
-          <PhoneFrame
-            src="/assets/phone-right.svg"
-            alt="Mira Psychologist persona inside Telegram"
-            tilt={8}
-            scale={0.92}
-            translateY={36}
-            translateX={-20}
-            zIndex={1}
-          />
-        </div>
+        <img
+          src="/assets/phone-left.png"
+          alt="Mira in a Telegram chat"
+          className={`${styles.phone} ${styles.left}`}
+          loading="lazy"
+        />
+        <img
+          src="/assets/photo-center.png"
+          alt="Mira chat home"
+          className={`${styles.phone} ${styles.center}`}
+          loading="eager"
+        />
+        <img
+          src="/assets/phone-right.png"
+          alt="Mira Psychologist persona"
+          className={`${styles.phone} ${styles.right}`}
+          loading="lazy"
+        />
       </div>
     </section>
   );
