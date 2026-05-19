@@ -41,12 +41,10 @@ export default function HowItWorks() {
           </ol>
 
           <div className={styles.visual}>
-            <img
-              src="/assets/photo-center.png"
-              alt="Mira responding inside a Telegram chat"
-              className={styles.phone}
-              loading="lazy"
-            />
+            <picture className={styles.phone}>
+              <source srcSet="/assets/photo-center.webp" type="image/webp" />
+              <img src="/assets/photo-center.png" alt="Mira responding inside a Telegram chat" loading="lazy" />
+            </picture>
           </div>
         </div>
       </div>

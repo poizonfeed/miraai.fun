@@ -17,24 +17,20 @@ export default function Hero() {
       </div>
 
       <div className={styles.phones}>
-        <img
-          src="/assets/phone-left.png"
-          alt="Mira in a Telegram chat"
-          className={`${styles.phone} ${styles.left}`}
-          loading="lazy"
-        />
-        <img
-          src="/assets/photo-center.png"
-          alt="Mira chat home"
-          className={`${styles.phone} ${styles.center}`}
-          loading="eager"
-        />
-        <img
-          src="/assets/phone-right.png"
-          alt="Mira Psychologist persona"
-          className={`${styles.phone} ${styles.right}`}
-          loading="lazy"
-        />
+        <picture className={`${styles.phone} ${styles.left}`}>
+          <source srcSet="/assets/phone-left.webp" type="image/webp" />
+          <img src="/assets/phone-left.png" alt="Mira in a Telegram chat" loading="lazy" />
+        </picture>
+
+        <picture className={`${styles.phone} ${styles.center}`}>
+          <source srcSet="/assets/photo-center.webp" type="image/webp" />
+          <img src="/assets/photo-center.png" alt="Mira chat home" loading="eager" />
+        </picture>
+
+        <picture className={`${styles.phone} ${styles.right}`}>
+          <source srcSet="/assets/phone-right.webp" type="image/webp" />
+          <img src="/assets/phone-right.png" alt="Mira Psychologist persona" loading="lazy" />
+        </picture>
       </div>
     </section>
   );
