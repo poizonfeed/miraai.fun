@@ -46,7 +46,12 @@
   }
 }
 
-/* Phone composition */
+/* Mobile carousel — hidden on desktop */
+.carousel {
+  display: none;
+}
+
+/* Desktop phone composition */
 .phones {
   position: relative;
   margin-top: clamp(32px, 5vw, 64px);
@@ -98,7 +103,65 @@
 }
 
 @media (max-width: 640px) {
-  .left, .right { display: none; }
-  .phones { min-height: auto; }
-  .center { width: 280px; }
+  .phones { display: none; }
+
+  .carousel {
+    display: block;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .track {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .slide picture {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding-bottom: 8px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: background 200ms ease, transform 200ms ease;
+  }
+
+  .dotActive {
+    background: var(--color-text);
+    transform: scale(1.25);
+  }
 }
